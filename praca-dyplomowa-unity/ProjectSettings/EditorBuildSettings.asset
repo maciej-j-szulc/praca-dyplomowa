@@ -8,4 +8,28 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Map.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/CastleLevel.unity
+    guid: 43a237f7553b9804f9acebe9d4364c5c
+  - enabled: 1
+    path: Assets/Scenes/ChurchLevel.unity
+    guid: 325c6ffbb040f7e4ba9c2d9ecf051801
+  - enabled: 1
+    path: Assets/Scenes/CommunityCenterLevel.unity
+    guid: 4d8de617adcd8404b9ebc1a7c15bdaa8
+  - enabled: 1
+    path: Assets/Scenes/LibraryLevel.unity
+    guid: e2bf162901be037459b97d5cf91cbe90
+  - enabled: 1
+    path: Assets/Scenes/BeachLevel.unity
+    guid: 572d1f99e86672b42847f5dc66caa366
+  - enabled: 1
+    path: Assets/Scenes/MuseumLevel.unity
+    guid: 11338eca2421c514c8f64246bae84937
+  - enabled: 1
+    path: Assets/Scenes/ShopLevel.unity
+    guid: 7395b66376098924e8b480f5add098ad
+  - enabled: 1
+    path: Assets/Scenes/SportCenterLevel.unity
+    guid: 61865796e39104241979d21d806ae42b
   m_configObjects: {}
