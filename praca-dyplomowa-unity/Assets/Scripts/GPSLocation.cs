@@ -28,7 +28,6 @@ public class GPSLocation : MonoBehaviour
         {
             yield break;
         }
-        // Starts the location service.
         Input.location.Start();
 
         int maxWait = 20;
