@@ -5,14 +5,12 @@ public class CharacterController2D : MonoBehaviour
 {
     [SerializeField] private float JumpForce = 350f;
     [Range(0, .3f)] [SerializeField] private float MovementSmoothing = .05f;
-    [SerializeField] private bool AirControl = false;
     [SerializeField] private LayerMask WhatIsGround;
     [SerializeField] private Transform GroundCheck;
 
     const float GroundedRadius = 0.2f;
     private bool Grounded;
     private Rigidbody2D p_Rigidbody2D;
-    private bool FacingRight = true;
     private Vector3 Velocity = Vector3.zero;
     private float timeBeforeGroundCheck = 0f;
 
@@ -62,20 +60,10 @@ public class CharacterController2D : MonoBehaviour
 
     public void Move(float move, bool jump)
     {
-        if(Grounded || AirControl)
+        if(Grounded)
         {
             Vector3 targetVelocity = new Vector2(move, p_Rigidbody2D.velocity.y);
             p_Rigidbody2D.velocity = Vector3.SmoothDamp(p_Rigidbody2D.velocity, targetVelocity, ref Velocity, MovementSmoothing);
-
-
-            if(move > 0 && !FacingRight)
-            {
-                Flip();
-            }
-            else if(move < 0 && FacingRight)
-            {
-                Flip();
-            }
         }
 
 
@@ -83,14 +71,5 @@ public class CharacterController2D : MonoBehaviour
         {
             p_Rigidbody2D.AddForce(new Vector2(0f, JumpForce));
         }
-    }
-
-    private void Flip()
-    {
-        FacingRight = !FacingRight;
-
-        Vector3 theScale = transform.localScale;
-        theScale.x *= -1;
-        transform.localScale = theScale;
     }
 }

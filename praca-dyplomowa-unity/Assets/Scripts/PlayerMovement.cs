@@ -7,31 +7,35 @@ public class PlayerMovement : MonoBehaviour
     public Animator animator;
     public float runSpeed = 30f;
     bool jump = false;
-    float horizontalMove = 0f;
     public Transform cameraPosition;
 
     // Update is called once per frame
     void Update()
     {
-        horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
-        animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
+        
 
         if(Input.GetButtonDown("Jump"))
         {
             jump = true;
-            animator.SetBool("IsJumping", true);
+            animator.SetBool("isJumping", true);
         }
-    }
-
-    private void FixedUpdate()
-    {
-        controller.Move(horizontalMove * Time.deltaTime, jump);
-        jump = false;
-        
     }
 
     public void OnLanding()
     {
         animator.SetBool("isJumping", false);
     }
+    private void FixedUpdate()
+    {
+        controller.Move(runSpeed * Time.deltaTime, jump);
+        jump = false;
+
+        if(GetComponent<Rigidbody2D>().transform.position.y <= -2)
+        {
+            FindObjectOfType<GameManager>().EndGame();
+        }
+        
+    }
+
+
 }
