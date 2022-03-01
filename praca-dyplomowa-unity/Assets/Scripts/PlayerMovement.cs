@@ -14,10 +14,11 @@ public class PlayerMovement : MonoBehaviour
     {
         
 
-        if(Input.GetButtonDown("Jump"))
+        if(Input.touchCount > 0)
         {
             jump = true;
             animator.SetBool("isJumping", true);
+            
         }
     }
 

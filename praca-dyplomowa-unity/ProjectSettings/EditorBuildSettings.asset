@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Map.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
+    path: Assets/Scenes/TEST.unity
+    guid: b283ef43a8c0a354e9f8bf4e0716ef32
+  - enabled: 1
     path: Assets/Scenes/CastleLevel.unity
     guid: 43a237f7553b9804f9acebe9d4364c5c
   - enabled: 1
