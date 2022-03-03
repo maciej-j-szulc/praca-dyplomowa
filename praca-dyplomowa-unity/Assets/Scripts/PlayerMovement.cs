@@ -6,20 +6,22 @@ public class PlayerMovement : MonoBehaviour
     public CharacterController2D controller;
     public Animator animator;
     public float runSpeed = 30f;
-    bool jump = false;
+    public bool jump = false;
     public Transform cameraPosition;
+    bool previousWasTouching = false;
 
     // Update is called once per frame
     void Update()
     {
-        
 
-        if(Input.touchCount > 0)
+        bool isTouching = Input.touchCount > 0;
+        if(isTouching && !previousWasTouching)
         {
             jump = true;
             animator.SetBool("isJumping", true);
-            
+            Debug.Log("Działam");
         }
+        previousWasTouching = isTouching;
     }
 
     public void OnLanding()
