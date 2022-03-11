@@ -4,7 +4,9 @@ using UnityEngine.UI;
 
 public class MapCollisions : MonoBehaviour
 {
-    
+    public Text LevelName;
+    public GameObject CurrentLevelBoard;
+    public Button StartLevel;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         string tag = gameObject.tag;
@@ -13,31 +15,57 @@ public class MapCollisions : MonoBehaviour
             switch (tag)
             {
                 case "SC":
-                    SceneManager.LoadScene("ShopLevel");
+                    LevelName.text = "Sklep";
+                    CurrentLevelBoard.SetActive(true);
+                    StartLevel.onClick.AddListener(delegate { StartNewLevel("ShopLevel"); });
                     break;
                 case "CHU":
-                    SceneManager.LoadScene("ChurchLevel");
+                    LevelName.text = "Kościół";
+                    CurrentLevelBoard.SetActive(true);
+                    StartLevel.onClick.AddListener(delegate { StartNewLevel("ChurchLevel"); });
                     break;
                 case "LIB":
-                    SceneManager.LoadScene("LibraryLevel");
+                    LevelName.text = "Biblioteka";
+                    CurrentLevelBoard.SetActive(true);
+                    StartLevel.onClick.AddListener(delegate { StartNewLevel("LibraryLevel"); });
                     break;
                 case "COM":
-                    SceneManager.LoadScene("CommunityCenterLevel");
+                    LevelName.text = "Miejski Dom Kultury";
+                    CurrentLevelBoard.SetActive(true);
+                    StartLevel.onClick.AddListener(delegate { StartNewLevel("CommunityCenterLevel"); });
                     break;
                 case "SPT":
-                    SceneManager.LoadScene("SportCenterLevel");
+                    LevelName.text = "Centrum Sportu";
+                    CurrentLevelBoard.SetActive(true);
+                    StartLevel.onClick.AddListener(delegate { StartNewLevel("SportLevel"); });
                     break;
                 case "BEA":
-                    SceneManager.LoadScene("BeachLevel");
+                    LevelName.text = "Plaża Miejska";
+                    CurrentLevelBoard.SetActive(true);
+                    StartLevel.onClick.AddListener(delegate { StartNewLevel("BeachLevel"); });
                     break;
                 case "CAS":
-                    SceneManager.LoadScene("CastleLevel");
+                    LevelName.text = "Ruiny Zamku";
+                    CurrentLevelBoard.SetActive(true);
+                    StartLevel.onClick.AddListener(delegate { StartNewLevel("CastleLevel"); });
                     break;
                 case "MUS":
-                    SceneManager.LoadScene("MuseumLevel");
+                    LevelName.text = "Muzeum";
+                    CurrentLevelBoard.SetActive(true);
+                    StartLevel.onClick.AddListener(delegate { StartNewLevel("MuzeumLevel"); });
                     break;
             }
         }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        CurrentLevelBoard.SetActive(false);
+    }
+
+    void StartNewLevel(string lvlName)
+    {
+        SceneManager.LoadScene(lvlName);
     }
 
 }
