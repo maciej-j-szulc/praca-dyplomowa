@@ -37,7 +37,7 @@ public class MapCollisions : MonoBehaviour
                 case "SPT":
                     LevelName.text = "Centrum Sportu";
                     CurrentLevelBoard.SetActive(true);
-                    StartLevel.onClick.AddListener(delegate { StartNewLevel("SportLevel"); });
+                    StartLevel.onClick.AddListener(delegate { StartNewLevel("SportCenterLevel"); });
                     break;
                 case "BEA":
                     LevelName.text = "Plaża Miejska";
@@ -52,7 +52,7 @@ public class MapCollisions : MonoBehaviour
                 case "MUS":
                     LevelName.text = "Muzeum";
                     CurrentLevelBoard.SetActive(true);
-                    StartLevel.onClick.AddListener(delegate { StartNewLevel("MuzeumLevel"); });
+                    StartLevel.onClick.AddListener(delegate { StartNewLevel("MuseumLevel"); });
                     break;
             }
         }

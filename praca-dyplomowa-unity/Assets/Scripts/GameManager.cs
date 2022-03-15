@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
         {
             gameHasEnded = true;
             Debug.Log("GAME OVER");
+            AddToCounter(SceneManager.GetActiveScene().name);
             Invoke("Restart", restartDelay);
         }
         
@@ -27,5 +28,36 @@ public class GameManager : MonoBehaviour
     void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    void AddToCounter(string name)
+    {
+        switch (name)
+        {
+            case "BeachLevel":
+                DataManager.Instance.BeachCounter += 1;
+                break;
+            case "ShopLevel":
+                DataManager.Instance.ShopCounter += 1;
+                break;
+            case "ChurchLevel":
+                DataManager.Instance.ChurchCounter += 1;
+                break;
+            case "CastleLevel":
+                DataManager.Instance.CastleCounter += 1;
+                break;
+            case "LibraryLevel":
+                DataManager.Instance.LibraryCounter += 1;
+                break;
+            case "CommunityCenterLevel":
+                DataManager.Instance.CommunityCenterCounter += 1;
+                break;
+            case "SportCenterLevel":
+                DataManager.Instance.SportCenterCounter += 1;
+                break;
+            case "MuseumLevel":
+                DataManager.Instance.MuseumCounter += 1;
+                break;
+        }
     }
 }
