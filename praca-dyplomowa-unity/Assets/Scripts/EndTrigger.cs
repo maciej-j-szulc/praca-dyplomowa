@@ -14,7 +14,8 @@ public class EndTrigger : MonoBehaviour
         FindObjectOfType<AudioManager>().Stop("MainTheme");
 
         
-            ChangeLevelFlag(SceneManager.GetActiveScene().name);
+        ChangeLevelFlag(SceneManager.GetActiveScene().name);
+        
         
     }
 
@@ -95,5 +96,7 @@ public class EndTrigger : MonoBehaviour
                 }
                 break;
         }
+        SaveSystem.SaveGame(DataManager.Instance);
+        
     }
 }

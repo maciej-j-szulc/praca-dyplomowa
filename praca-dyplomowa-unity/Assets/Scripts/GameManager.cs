@@ -35,6 +35,7 @@ public class GameManager : MonoBehaviour
 
     void AddToCounter(string name)
     {
+        
         switch (name)
         {
             case "BeachLevel":
@@ -62,5 +63,7 @@ public class GameManager : MonoBehaviour
                 DataManager.Instance.MuseumCounter += 1;
                 break;
         }
+        SaveSystem.SaveGame(DataManager.Instance);
+        
     }
 }
