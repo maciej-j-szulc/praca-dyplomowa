@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
         {
             gameHasEnded = true;
             Debug.Log("GAME OVER");
+            
             AddToCounter(SceneManager.GetActiveScene().name);
             Invoke("Restart", restartDelay);
         }
@@ -35,7 +36,6 @@ public class GameManager : MonoBehaviour
 
     void AddToCounter(string name)
     {
-        
         switch (name)
         {
             case "BeachLevel":

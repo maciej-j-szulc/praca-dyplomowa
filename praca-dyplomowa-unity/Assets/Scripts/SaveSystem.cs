@@ -14,6 +14,8 @@ public static class SaveSystem {
         Debug.Log("Before saving");
         Debug.Log(gamedata.BeachCounter);
         Debug.Log(gamedata.BeachLevelActivated);
+        Debug.Log("Plaża" + gamedata.BeachScore);
+        Debug.Log("Biblioteka" + gamedata.LibraryScore);
         formatter.Serialize(stream, gamedata);
         stream.Close();
     }
@@ -28,6 +30,7 @@ public static class SaveSystem {
             Debug.Log("Before loading");
             Debug.Log(data.BeachCounter);
             Debug.Log(data.BeachLevelActivated);
+            Debug.Log(path);
             stream.Close();
             return data;
         }

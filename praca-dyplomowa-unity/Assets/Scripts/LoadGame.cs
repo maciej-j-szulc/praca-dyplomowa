@@ -15,6 +15,7 @@ public class LoadGame : MonoBehaviour
         DataManager.Instance.MuseumLevelActivated = data.MuseumLevelActivated;
         DataManager.Instance.ShopLevelActivated = data.ShopLevelActivated;
         DataManager.Instance.SportCenterLevelActivated = data.SportCenterLevelActivated;
+
         DataManager.Instance.BeachCounter = data.BeachCounter;
         DataManager.Instance.CastleCounter = data.CastleCounter;
         DataManager.Instance.CommunityCenterCounter = data.CommunityCenterCounter;
@@ -24,5 +25,13 @@ public class LoadGame : MonoBehaviour
         DataManager.Instance.ShopCounter = data.ShopCounter;
         DataManager.Instance.SportCenterCounter = data.SportCenterCounter;
 
+        DataManager.Instance.BeachScore = data.BeachScore;
+        DataManager.Instance.CastleScore = data.CastleScore;
+        DataManager.Instance.CommunityCenterScore = data.CommunityCenterScore;
+        DataManager.Instance.ChurchScore = data.ChurchScore;
+        DataManager.Instance.LibraryScore = data.LibraryScore;
+        DataManager.Instance.MuseumScore = data.MuseumScore;
+        DataManager.Instance.ShopScore = data.ShopScore;
+        DataManager.Instance.SportCenterScore = data.SportCenterScore;
     }
 }

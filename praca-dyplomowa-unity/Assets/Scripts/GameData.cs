@@ -23,6 +23,15 @@ public class GameData {
     public int ShopCounter;
     public int SportCenterCounter;
 
+    public int BeachScore;
+    public int CastleScore;
+    public int CommunityCenterScore;
+    public int ChurchScore;
+    public int LibraryScore;
+    public int MuseumScore;
+    public int ShopScore;
+    public int SportCenterScore;
+
 
     public GameData(DataManager data)
     {
@@ -43,5 +52,14 @@ public class GameData {
         MuseumCounter = data.MuseumCounter;
         ShopCounter = data.ShopCounter;
         SportCenterCounter = data.SportCenterCounter;
+
+        BeachScore = data.BeachScore;
+        CastleScore = data.CastleScore;
+        CommunityCenterScore = data.CommunityCenterScore;
+        ChurchScore = data.ChurchScore;
+        LibraryScore = data.LibraryScore;
+        MuseumScore = data.MuseumScore;
+        ShopScore = data.ShopScore;
+        SportCenterScore = data.SportCenterScore;
     }
 }

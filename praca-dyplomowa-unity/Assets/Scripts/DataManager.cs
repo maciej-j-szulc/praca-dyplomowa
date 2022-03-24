@@ -24,6 +24,15 @@ public class DataManager : MonoBehaviour
     public int ChurchCounter = 0;
     public int ShopCounter = 0;
 
+    public int SportCenterScore = 0;
+    public int BeachScore = 0;
+    public int CastleScore = 0;
+    public int CommunityCenterScore = 0;
+    public int MuseumScore = 0;
+    public int LibraryScore = 0;
+    public int ChurchScore = 0;
+    public int ShopScore = 0;
+
     private void Awake()
     {
         if(Instance != null)

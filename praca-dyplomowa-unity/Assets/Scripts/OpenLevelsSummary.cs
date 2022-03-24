@@ -10,10 +10,16 @@ public class OpenLevelsSummary : MonoBehaviour
     public Button Close;
     public GameObject LevelsCanvas;
 
+    public Button OpenScore;
+    public Button CloseScore;
+    public GameObject ScoreCanvas;
+
     private void Start()
     {
         Open.onClick.AddListener(ShowCanvas);
         Close.onClick.AddListener(HideCanvas);
+        OpenScore.onClick.AddListener(ShowScore);
+        CloseScore.onClick.AddListener(HideScore);
     }
 
     void ShowCanvas()
@@ -24,5 +30,15 @@ public class OpenLevelsSummary : MonoBehaviour
     void HideCanvas()
     {
         LevelsCanvas.SetActive(false);
+    }
+
+    void ShowScore()
+    {
+        ScoreCanvas.SetActive(true);
+    }
+
+    void HideScore()
+    {
+        ScoreCanvas.SetActive(false);
     }
 }
