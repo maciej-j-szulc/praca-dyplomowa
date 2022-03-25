@@ -10,7 +10,10 @@ public class GameManager : MonoBehaviour
 
     public GameObject competeLevelUI;
 
-
+    private void Start()
+    {
+        Time.timeScale = 0;
+    }
 
     public void CompleteLevel()
     {
@@ -31,6 +34,7 @@ public class GameManager : MonoBehaviour
 
     void Restart()
     {
+        SaveSystem.SaveGame(DataManager.Instance);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
