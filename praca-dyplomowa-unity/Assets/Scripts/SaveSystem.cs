@@ -11,11 +11,6 @@ public static class SaveSystem {
         FileStream stream = new FileStream(path, FileMode.Create);
 
         GameData gamedata = new GameData(PlayerProgress);
-        Debug.Log("Before saving");
-        Debug.Log(gamedata.BeachCounter);
-        Debug.Log(gamedata.BeachLevelActivated);
-        Debug.Log("Plaża" + gamedata.BeachScore);
-        Debug.Log("Biblioteka" + gamedata.LibraryScore);
         formatter.Serialize(stream, gamedata);
         stream.Close();
     }
@@ -27,9 +22,6 @@ public static class SaveSystem {
             BinaryFormatter formatter = new BinaryFormatter();
             FileStream stream = new FileStream(path, FileMode.Open);
             GameData data = formatter.Deserialize(stream) as GameData;
-            Debug.Log("Before loading");
-            Debug.Log(data.BeachCounter);
-            Debug.Log(data.BeachLevelActivated);
             Debug.Log(path);
             stream.Close();
             return data;
