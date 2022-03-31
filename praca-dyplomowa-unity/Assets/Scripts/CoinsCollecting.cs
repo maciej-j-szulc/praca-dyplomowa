@@ -12,6 +12,7 @@ public class CoinsCollecting : MonoBehaviour
             Score.scoreValue += 1;
             Destroy(gameObject);
             collected = true;
+            FindObjectOfType<AudioManager>().Play("CoinPickUp");
         }
     }
 }
